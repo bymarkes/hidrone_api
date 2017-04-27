@@ -21,7 +21,7 @@ class VolsController extends Controller
 
         if (!$vols)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
         }else{
            //OK
             return response()->json(['status'=>'ok','data'=>$vols],200);
@@ -61,7 +61,7 @@ class VolsController extends Controller
         $vol = Vol::find($volid);
         if (!$vol)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Vol Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Vol Not Found'])],404);
         }else{
            //OK
             return response()->json(['status'=>'ok','data'=>$vol],200);
@@ -102,7 +102,7 @@ class VolsController extends Controller
         $vol = Vol::find($id);
         if (!$vol)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Vol Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Vol Not Found'])],404);
         }else{
             $vol->delete();
            //OK

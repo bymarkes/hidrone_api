@@ -20,7 +20,7 @@ class DronesController extends Controller
         $usuari = Usuari::whereRaw('Nick = ? ', [$nickname])->get()->first();
         if (!$usuari)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
         }else{
             $drones = Usuari::find($usuari->id)->drones;
            //OK
@@ -62,7 +62,7 @@ class DronesController extends Controller
         $drone = Drone::find($id_drone);
         if (!$drone)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
         }else{
            //OK
             return response()->json(['status'=>'ok','data'=>$drone],200);
@@ -92,7 +92,7 @@ class DronesController extends Controller
         $drone = Drone::find($id);
         if (!$drone)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
         }else{
              $drone->update($request->all());
            //OK
@@ -111,7 +111,7 @@ class DronesController extends Controller
         $drone = Drone::find($id);
         if (!$drone)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Drone Not Found'])],404);
         }else{
             $drone->delete();
            //OK

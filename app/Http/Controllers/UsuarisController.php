@@ -58,7 +58,7 @@ class UsuarisController extends Controller
         $usuari = Usuari::whereRaw('Nick = ? ', [$nickname])->get()->first();
         if (!$usuari)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
         }else{
            //OK
             return response()->json(['status'=>'ok','data'=>$usuari],200);
@@ -88,7 +88,7 @@ class UsuarisController extends Controller
         $usuari = Usuari::whereRaw('Nick = ? ', [$nickname])->get()->first();
         if (!$usuari)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
         }else{
             $usuari->update($request->all());
            //OK
@@ -106,12 +106,12 @@ class UsuarisController extends Controller
     {
         $tokenKey = Token::whereRaw('token = ? ', [$request->token])->get()->first();
         if (!$tokenKey) { 
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Bad Token'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Bad Token'])],404);
         }else{
             $usuari = Usuari::whereRaw('Nick = ? ', [$nickname])->get()->first();
             if (!$usuari)
             {
-                return response()->json(['errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
+                return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
             }else{
                 $usuari->delete();
                //OK

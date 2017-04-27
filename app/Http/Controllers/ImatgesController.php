@@ -20,7 +20,7 @@ class ImatgesController extends Controller
         $usuari = Usuari::whereRaw('Nick = ? ', [$nickname])->get()->first();
         if (!$usuari)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
         }else{
             $imatges = Usuari::find($usuari->id)->imatges;
            //OK
@@ -62,7 +62,7 @@ class ImatgesController extends Controller
         $imatge = Imatge::find($idimatge);
         if (!$imatge)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Imatge Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Imatge Not Found'])],404);
         }else{
            //OK
             return response()->json(['status'=>'ok','data'=>$imatge],200);
@@ -92,7 +92,7 @@ class ImatgesController extends Controller
         $imatge = Imatge::find($idimatge);
         if (!$imatge)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Imatge Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Imatge Not Found'])],404);
         }else{
             $imatge->update($request->all());
            //OK
@@ -111,7 +111,7 @@ class ImatgesController extends Controller
         $imatge = Imatge::find($idimatge);
         if (!$imatge)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'Imatge Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Imatge Not Found'])],404);
         }else{
             $imatge->delete();
            //OK

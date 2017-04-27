@@ -59,7 +59,7 @@ class OnlineFlightsController extends Controller
 
         if (!$onlineflight)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
         }else{
             //OK
             return response()->json(['status'=>'ok','data'=>$onlineflight],200);
@@ -90,7 +90,7 @@ class OnlineFlightsController extends Controller
 
         if (!$onlineflights)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
         }else{
             $onlineflights->update($request->all());
             //OK
@@ -109,7 +109,7 @@ class OnlineFlightsController extends Controller
         $onlineflight = OnlineFlight::find($id);
         if (!$onlineflights)
         {
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
         }else{
             $onlineflights->delete();
             //OK
