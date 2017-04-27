@@ -43,7 +43,7 @@ class LoginController extends Controller
 
         if (is_null($usuariDB)) {   
             //User not found 
-            return response()->json(['errors'=>array(['code'=>404,'message'=>'No es troba Usuari amb aquest Nick.'])],404);
+            return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'User not found.'])],404);
         } else {
             if ($request->Contrasenya == $usuariDB->Contrasenya) {
 
@@ -57,7 +57,7 @@ class LoginController extends Controller
                 return response()->json(['status'=>'ok','data'=>$tokenKey],200);
             }else{
                 //Password incorrect
-               return response()->json(['errors'=>array(['code'=>404,'message'=>'Incorrect password.'])],404);
+               return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Incorrect password.'])],404);
             }
         }
     }
