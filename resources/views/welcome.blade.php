@@ -35,7 +35,7 @@
     </head>
     <body>
       <div class="container">
-        <img src="loginLogoFinal.png" alt="hiDrone Logo" style="width:250px;">
+        <img src="resources/views/loginLogoFinal.png" alt="hiDrone Logo" style="width:250px;">
       </div>
   </body>
 </html>
