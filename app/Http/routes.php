@@ -19,7 +19,7 @@ Route::resource('api/usuaris', 'UsuarisController', ['except'=>['create','edit']
 
 Route::resource('api/usuaris.drones', 'DronesController', ['except'=>['create','edit']]);
 
-Route::resource('api/usuaris.drones.vol', 'VolsController', ['except'=>['create','edit','update']]);
+Route::resource('api/usuaris.drones.vol', 'VolsController', ['except'=>['create','edit','update']];
 
 Route::resource('api/usuaris.imatges','ImatgesController', ['except'=>['create','edit']]);
 
