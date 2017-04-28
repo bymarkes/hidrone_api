@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuari extends Model
 {
-    protected $fillable = ['id', 'Nom', 'Cognom', 'Correu', 'Nick', 'Contrasenya', 'created_at', 'n_drones', 'n_vols', 'updated_at'];
+    protected $fillable = ['id', 'Nom', 'Cognom', 'Correu', 'Nick', 'Contrasenya', 'created_at', 'n_drones', 'n_vols', 'updated_at', 'descripcio'];
 
     public function drones() {
 		return $this->hasMany('App\Drone'); 
