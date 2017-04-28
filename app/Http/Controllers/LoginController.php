@@ -52,9 +52,9 @@ class LoginController extends Controller
                 
                 $params = array("token"=>$tokenKey, "usuari_id"=>$usuariDB->id);
                 $token = Token::create($params);
-
+                unset($usuariDB->Contrasenya);
                 //OK
-                return response()->json(['status'=>'ok','data'=>$tokenKey],200);
+                return response()->json(['status'=>'ok','token'=>$tokenKey,'data'=>$usuariDB],200);
             }else{
                 //Password incorrect
                return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Incorrect password.'])],404);
