@@ -28,3 +28,5 @@ Route::resource('api/usuaris.missatges','MissatgesController', ['except'=>['crea
 Route::resource('api/onlineflights', 'OnlineFlightsController', ['except'=>['create','edit']]);
 
 Route::resource('api/login', 'LoginController', ['only'=>['store','destroy']]);
+
+Route::resource('api/token', 'TokensController', ['only'=>['store']]);
