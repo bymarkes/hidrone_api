@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Token;
+
 class TokensController extends Controller
 {
     /**
@@ -35,9 +37,9 @@ class TokensController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $token)
+    public function store(Request $request)
     {
-        $tokenKey = Token::whereRaw('token = ? ', [$token])->get()->first();
+         $tokenKey = Token::whereRaw('token = ? ', [$request->token])->get()->first();
 
         if (is_null($tokenKey)) { 
             return response()->json(['errors'=>array(['code'=>404,'message'=>'Incorrect token.'])],404);  
