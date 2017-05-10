@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('login', 'LoginWebController', ['only'=>['store','index']]);
+
+Route::resource('register', 'RegisterWebController', ['only'=>['store']]);
+
 Route::resource('api/usuaris', 'UsuarisController', ['except'=>['create','edit']]);
 
 Route::resource('api/usuaris.drones', 'DronesController', ['except'=>['create','edit']]);
