@@ -39,7 +39,7 @@ class TokensController extends Controller
      */
     public function store(Request $request)
     {
-         $tokenKey = Token::whereRaw('token = ? ', [$request->token])->get()->first();
+        $tokenKey = Token::whereRaw('token = ? ', [$request->token])->get()->first();
 
         if (is_null($tokenKey)) { 
             return response()->json(['errors'=>array(['code'=>404,'message'=>'Incorrect token.'])],404);  

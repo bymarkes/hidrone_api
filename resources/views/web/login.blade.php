@@ -17,7 +17,7 @@
       {!! Form::text('email', null, ['class'=>'input','placeholder'=>'email'] ) !!}
       {!! Form::password('Contrasenya', ['class'=>'input','placeholder'=>'password'] ) !!}
       {!! Form::submit('CREATE', ['class'=>'button-submit'])!!}
-      <p class="message">Already registered? <a rel="nofollow" rel="noreferrer" href="">Sign In</a></p>
+      <p class="message">Already registered? <a rel="nofollow" rel="noreferrer" href="#">Sign In</a></p>
       {!!Form::close()!!}
     </form>
     <form class="login-form">
@@ -25,7 +25,7 @@
       {!! Form::text('Nick', null, ['class'=>'input' ,'placeholder'=>'username'] ) !!}
       {!! Form::password('Contrasenya', ['class'=>'input','placeholder'=>'password'] ) !!}
       {!! Form::submit('LOG IN', ['class'=>'button-submit'])!!}
-      <p class="message">Not registered? <a rel="nofollow" rel="noreferrer" href="">Create an account</a></p>
+      <p class="message">Not registered? <a rel="nofollow" rel="noreferrer" href="#">Create an account</a></p>
       {!!Form::close()!!}
     </form>
   </div>
