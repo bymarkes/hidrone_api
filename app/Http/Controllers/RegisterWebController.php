@@ -38,8 +38,9 @@ class RegisterWebController extends Controller
      */
     public function store(Request $request)
     {
+        unset($request->token);
         $newusuari = Usuari::create($request->all());
-        return redirect('login');
+        return redirect('welcome');
     }
 
     /**

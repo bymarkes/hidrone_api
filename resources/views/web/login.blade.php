@@ -10,11 +10,11 @@
   @endif
   <div class="form">
     <form class="register-form">
-      {!!Form::open(array('url'=>'register'))!!}
-      {!! Form::text('name', null, ['class'=>'input', 'placeholder'=>'name'] ) !!}
-      {!! Form::text('surname', null , ['class'=>'input', 'placeholder'=>'surname']) !!}
+      {!! Form::open(array('url'=>'register', 'method' => 'post')) !!}
+      {!! Form::text('Nom', null, ['class'=>'input', 'placeholder'=>'name'] ) !!}
+      {!! Form::text('Cognom', null , ['class'=>'input', 'placeholder'=>'surname']) !!}
       {!! Form::text('Nick', null, ['class'=>'input','placeholder'=>'username'] ) !!}
-      {!! Form::text('email', null, ['class'=>'input','placeholder'=>'email'] ) !!}
+      {!! Form::text('Correu', null, ['class'=>'input','placeholder'=>'email'] ) !!}
       {!! Form::password('Contrasenya', ['class'=>'input','placeholder'=>'password'] ) !!}
       {!! Form::submit('CREATE', ['class'=>'button-submit'])!!}
       <p class="message">Already registered? <a rel="nofollow" rel="noreferrer" href="#">Sign In</a></p>

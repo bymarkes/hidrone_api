@@ -46,7 +46,9 @@ class LoginController extends Controller
             return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'User not found.'])],404);
         } else {
             if ($request->Contrasenya == $usuariDB->Contrasenya) {
-
+                //Delete deprecated token
+                $tokenAntiga = Token::whereRaw('usuari_id = ? ', [$usuariDB->id])->get()->first();
+                $tokenAntiga->delete();
                 //generate token
                 $tokenKey = bin2hex(random_bytes(16));
                 

@@ -41,4 +41,5 @@ Route::resource('api/onlineflights', 'OnlineFlightsController', ['except'=>['cre
 
 Route::resource('api/login', 'LoginController', ['only'=>['store','destroy']]);
 
-Route::resource('api/token', 'TokensController', ['only'=>['store']]);
+/*TODO*/
+//Route::resource('api/token', 'TokensController', ['only'=>['store','destroy']]);

@@ -38,25 +38,24 @@ class LoginWebController extends Controller
      */
     public function store(Request $request)
     {
+        
        $usuariDB = Usuari::whereRaw('Nick = ? ', [$request->Nick])->get()->first();
         $error = "The username or password is incorrect";
         if (is_null($usuariDB)) {   
             //User not found 
-            return redirect('login')->with('data',$error);    
+            //return redirect('login')->with('data',$error);    
+            return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'User not found.'])],404);
         } else {
             if ($request->Contrasenya == $usuariDB->Contrasenya) {
 
-                //generate token
-                $tokenKey = bin2hex(random_bytes(16));
-                
-                $params = array("token"=>$tokenKey, "usuari_id"=>$usuariDB->id);
-                $token = Token::create($params);
                 unset($usuariDB->Contrasenya);
                 //OK
-                return redirect('login')->with('data',$usuariDB);  
+                //return redirect('/')->with('data',$usuariDB);  
+                return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'GGWP.'])],404);
             }else{
                 //Password incorrect
-               return redirect('login')->with('data',$error);  
+               //return redirect('login')->with('data',$error);  
+                return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'Pass incorrect.'])],404);
             }
         }
     }
