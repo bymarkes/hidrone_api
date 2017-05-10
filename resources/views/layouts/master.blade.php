@@ -9,8 +9,8 @@
       <body>
             <ul class="menu">
               <li><a href="{{url('/')}}" class="active">Home</a></li>
-              <li><a href="{{url('/')}}">About</a></li>
-              <li><a href="{{url('/')}}">Contact</a></li>
+              <li><a href="{{url('/about')}}">About</a></li>
+              <li><a href="{{url('/contact')}}">Contact</a></li>
               <li><a href="{{url('/login')}}">Sign In</a></li>
             </ul>
             @yield('body')

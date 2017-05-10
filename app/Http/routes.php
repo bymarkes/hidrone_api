@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contact', function () {
+    return view('web.contact');
+});
+
+Route::get('/about', function () {
+    return view('web.about');
+});
+
 Route::resource('login', 'LoginWebController', ['only'=>['store','index']]);
 
 Route::resource('register', 'RegisterWebController', ['only'=>['store']]);
