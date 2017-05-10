@@ -88,8 +88,16 @@ class TokensController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($request)
     {
-        //
+        $tokenKey = Token::whereRaw('token = ? ', [$request->token])->get()->first();
+        if (!$tokenKey) { 
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Bad Token'])],404);
+        }else{
+            $tokenKey->delete();
+           //OK
+            return response()->json(['status'=>'ok'],200);
+            }
+        }
     }
 }

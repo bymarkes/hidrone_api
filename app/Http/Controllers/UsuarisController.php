@@ -108,7 +108,7 @@ class UsuarisController extends Controller
         if (!$tokenKey) { 
             return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Bad Token'])],404);
         }else{
-            $usuari = Usuari::whereRaw('Nick = ? ', [$nickname])->get()->first();
+            $usuari = Usuari::whereRaw('Nick = ? ', [$request->nickname])->get()->first();
             if (!$usuari)
             {
                 return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Usuari Not Found'])],404);
