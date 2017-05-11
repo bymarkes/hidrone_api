@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.splash');
 });
 
 Route::get('/contact', function () {
@@ -22,6 +22,8 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('web.about');
 });
+
+Route::resource('/map', 'MapController', ['only'=>['index']]);
 
 Route::resource('login', 'LoginWebController', ['only'=>['store','index']]);
 

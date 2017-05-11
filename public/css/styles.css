@@ -63,6 +63,14 @@ li a:hover {
     text-decoration: none;
     color: #05272E;
 }
+/*CONTACT PAGE*/
+
+.contact-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
 /*LOGIN PAGE*/
 
 .login-page {
@@ -70,6 +78,7 @@ li a:hover {
     padding: 8% 0 0;
     margin: auto;
 }
+
 .form {
     position: relative;
     z-index: 1;
