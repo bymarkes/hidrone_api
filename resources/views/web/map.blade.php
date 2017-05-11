@@ -1,13 +1,97 @@
 @extends('layouts.master')
-@section('title', 'Live Map')
+
+@section('title', 'Index')
 <style>
-	#map {
-	height: 100%;
-	width: 100%;
+   #map {
+    height: 100%;
+    width: 100%;
+   }
+
+   .sidenav {
+	    height: 100%; /* 100% Full-height */
+	    width: 0; /* 0 width - change this with JavaScript */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Stay on top */
+	    top: 0;
+	    left: 0;
+	    background-color: #111; /* Black*/
+	    overflow-x: hidden; /* Disable horizontal scroll */
+	    padding-top: 60px; /* Place content 60px from the top */
+	    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	}
+
+	.sidenav .row {
+	    padding: 8px 8px 8px 32px;
+	    text-decoration: none;
+	    font-size: 25px;
+	    color: #818181;
+	    display: block;
+	    transition: 0.3s
+	}
+	.drone{
+	    font-size: 15px;
+	}
+
+	hr.style1{
+		width: 200px;
+		border-top: 2px solid white;
+	}
+
+	.sidenav .row:hover, .offcanvas .row:focus{
+	    color: #f1f1f1;
+	    text-decoration: none;
+	}
+
+	.sidenav .closebtn {
+	    position: absolute;
+	    top: 0;
+	    right: 25px;
+	    font-size: 36px;
+	    margin-left: 50px;
+	}
+
+	#main {
+	    transition: margin-left .5s;
+	    padding: 20px;
+	}
+
+	@media screen and (max-height: 450px) {
+	    .sidenav {padding-top: 15px;}
+	    .sidenav .row {font-size: 18px;}
 	}
 </style>
+<script>
+	function openNav() {
+	    document.getElementById("mySidenav").style.width = "250px";
+	}
+
+	function closeNav() {
+	    document.getElementById("mySidenav").style.width = "0";
+	}
+</script>
+@section('livedrones')
+	<span onclick="openNav()">open</span>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+@stop
+
 @section('body')
+    <div id="mySidenav" class="sidenav">
+  		<div class="row">
+  		ONLINE FLIGHTS
+  		</div>
+      	@foreach($onlineflights as $drone)
+      		<div class="row">
+      			{{$drone->username}}
+      			</br>
+      			<div class="drone">
+      				{{$drone->drone}}
+      			</div>
+      		</div>		
+		@endforeach
+    </div>
+
 <div id="map"></div>
+	
 <script>
 	var list;
 	function initMap() {

@@ -9,6 +9,7 @@ body {
     color: #606468;
     font-family: 'PT Sans', Arial, Verdana;
     margin: 0;
+    overflow-x: hidden;
 }
 .main-container {
     top: 50%;

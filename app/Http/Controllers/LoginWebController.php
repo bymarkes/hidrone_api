@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Usuari;
 
 class LoginWebController extends Controller
 {
@@ -16,7 +17,7 @@ class LoginWebController extends Controller
      */
     public function index()
     {   
-        $data ="";
+        $data ="OK";
         return view('web.login')->with('data',$data);
     }
 
@@ -40,22 +41,19 @@ class LoginWebController extends Controller
     {
         
        $usuariDB = Usuari::whereRaw('Nick = ? ', [$request->Nick])->get()->first();
-        $error = "The username or password is incorrect";
+        $error = "ERROR";
         if (is_null($usuariDB)) {   
             //User not found 
-            //return redirect('login')->with('data',$error);    
-            return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'User not found.'])],404);
+            return view('web.login')->with('data',$error);  
         } else {
             if ($request->Contrasenya == $usuariDB->Contrasenya) {
 
                 unset($usuariDB->Contrasenya);
                 //OK
-                //return redirect('/')->with('data',$usuariDB);  
-                return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'GGWP.'])],404);
+                return redirect('/')->with('data',$usuariDB);
             }else{
                 //Password incorrect
-               //return redirect('login')->with('data',$error);  
-                return response()->json(['status'=>'error', 'errors'=>array(['code'=>404,'message'=>'Pass incorrect.'])],404);
+               return view('web.login')->with('data',$error);  
             }
         }
     }

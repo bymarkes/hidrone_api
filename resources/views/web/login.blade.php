@@ -2,31 +2,27 @@
 @section('title', 'Sing In')
 @section('body')
 <div class="login-page">
-  @if($data)
+  @if($data=="ERROR")
   <div class="alert">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-    $data
+    The username or password is incorrect!
   </div>
   @endif
   <div class="form">
-    <form class="register-form">
-      {!! Form::open(array('action' => 'RegisterWebController@store')) !!}
-      {!! Form::text('Nom', null, ['class'=>'input', 'placeholder'=>'name'] ) !!}
-      {!! Form::text('Cognom', null , ['class'=>'input', 'placeholder'=>'surname']) !!}
-      {!! Form::text('Nick', null, ['class'=>'input','placeholder'=>'username'] ) !!}
-      {!! Form::text('Correu', null, ['class'=>'input','placeholder'=>'email'] ) !!}
-      {!! Form::password('Contrasenya', ['class'=>'input','placeholder'=>'password'] ) !!}
-      {!! Form::submit('CREATE', ['class'=>'button-submit'])!!}
+    <form class="register-form" method="post" action="{{url('register')}}">
+      <input type="text" class="input" name="Nom" placeholder="Name"/>
+      <input type="text" class="input" name="Cognom" placeholder="Surname"/>
+      <input type="text" class="input" name="Nick" placeholder="Nick"/>
+      <input type="text" class="input" name="Correu" placeholder="Email"/>
+      <input type="password" class="input" name="Contrasenya" placeholder="Password"/>
+      <button type="submit" class="button-submit">Registra't</button>
       <p class="message">Already registered? <a rel="nofollow" rel="noreferrer" href="#">Sign In</a></p>
-      {!!Form::close()!!}
     </form>
-    <form class="login-form">
-      {!!Form::open(array('url'=>'register'))!!}
-      {!! Form::text('Nick', null, ['class'=>'input' ,'placeholder'=>'username'] ) !!}
-      {!! Form::password('Contrasenya', ['class'=>'input','placeholder'=>'password'] ) !!}
-      {!! Form::submit('LOG IN', ['class'=>'button-submit'])!!}
+    <form class="login-form" method="post" action="{{url('login')}}">
+      <input type="text" class="input" name="Nick" placeholder="Nick"/>
+      <input type="text" class="input" name="Contrasenya" placeholder="Email"/>
+       <button type="submit" class="button-submit">Entra</button>
       <p class="message">Not registered? <a rel="nofollow" rel="noreferrer" href="#">Create an account</a></p>
-      {!!Form::close()!!}
     </form>
   </div>
 </div>

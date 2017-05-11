@@ -6,17 +6,8 @@
             <link rel="stylesheet" type="text/css" href="css/styles.css">
             
       </head>
-      @yield('bodysplash')
       <body>
-            <div class ="site-wrap">
-              <ul class="menu">
-                  @yield('livedrones')
-                  <li><a href="{{url('/map')}}">Live Map</a></li>
-                  <li><a href="{{url('/about')}}">About</a></li>
-                  <li><a href="{{url('/contact')}}">Contact</a></li>
-                  <li><a href="{{url('/login')}}">Sign In</a></li>
-              </ul>
-              @yield('body')
+            @yield('body')
             <div class="footer">
              &copy; hiDrone 2017
             </div>
