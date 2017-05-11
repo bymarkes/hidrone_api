@@ -10,7 +10,7 @@
   @endif
   <div class="form">
     <form class="register-form">
-      {!! Form::open(array('url'=>'register', 'method' => 'post')) !!}
+      {!! Form::open(array('action' => 'RegisterWebController@store')) !!}
       {!! Form::text('Nom', null, ['class'=>'input', 'placeholder'=>'name'] ) !!}
       {!! Form::text('Cognom', null , ['class'=>'input', 'placeholder'=>'surname']) !!}
       {!! Form::text('Nick', null, ['class'=>'input','placeholder'=>'username'] ) !!}
@@ -21,7 +21,7 @@
       {!!Form::close()!!}
     </form>
     <form class="login-form">
-      {!!Form::open(array('url'=>'login'))!!}
+      {!!Form::open(array('url'=>'register'))!!}
       {!! Form::text('Nick', null, ['class'=>'input' ,'placeholder'=>'username'] ) !!}
       {!! Form::password('Contrasenya', ['class'=>'input','placeholder'=>'password'] ) !!}
       {!! Form::submit('LOG IN', ['class'=>'button-submit'])!!}
