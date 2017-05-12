@@ -14,7 +14,7 @@
 	    z-index: 1; /* Stay on top */
 	    top: 0;
 	    left: 0;
-	    background-color: #111; /* Black*/
+	    background-color: #05272E; /* Black*/
 	    overflow-x: hidden; /* Disable horizontal scroll */
 	    padding-top: 60px; /* Place content 60px from the top */
 	    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -24,7 +24,7 @@
 	    padding: 8px 8px 8px 32px;
 	    text-decoration: none;
 	    font-size: 25px;
-	    color: #818181;
+	    color: white;
 	    display: block;
 	    transition: 0.3s
 	}
@@ -38,7 +38,7 @@
 	}
 
 	.sidenav .row:hover, .offcanvas .row:focus{
-	    color: #f1f1f1;
+	    color: #19BDDE;
 	    text-decoration: none;
 	}
 
@@ -67,22 +67,19 @@
 	.smGlobalBtn{ /* global button class */
 	    display: inline-block;
 	    cursor: pointer;
-	    width: 50px;
-	    height: 50px;
-	    box-shadow: 0 2px 2px #999;
+	    width: 8%;
 	    padding: 0px;
 	    text-decoration: none;
 	    text-align: center;
+	    vertical-align: middle;
 	    color: #fff;
-	    font-size: 25px;
+	    font-size: 15px;
 	    font-weight: normal;
 	    line-height: 2em;
-	    border-radius: 25px;
-	    -moz-border-radius:25px;
-	    -webkit-border-radius:25px;
 	    position: fixed; 
-    	bottom: 80px; 
-	    background: #4060A5;
+    	top: 9%; 
+    	right: 0.5%;
+	    background: #DF4444;
 	}
 
 </style>
@@ -97,9 +94,8 @@
 </script>
 @section('livedrones')
 	<div id="social">
-		<span class="smGlobalBtn" onclick="openNav()">open</span>
+		<span class="smGlobalBtn" onclick="openNav()">LIVE FLIGHTS</span>
 	</div>
-	
 @stop
 
 @section('body')
@@ -120,50 +116,68 @@
 </div>
 
 <div id="map">
-	<div class="tile">
-		<div class="float menu-share">
-			<i class="fa fa-share my-float"></i>
-		</div>
-		<div class="soc">
-			<a href="#" class="facebook">
-				<i class="fa fa-facebook"></i>
-			</a>
-			<a href="#" class="google-plus">
-				<i class="fa fa-google-plus"></i>
-			</a>
-			<a href="#" class="twitter">
-				<i class="fa fa-twitter"></i>
-			</a>
-		</div>
-	</div>
 </div>
 
 <script>
 	var list;
+	var markersListOld = [];
+	var markersListNew;
+	var map;
+	var icon;
 	function initMap() {
 	  	var cameraPos = {lat: 41.2, lng: 2.5};
-	  	var map = new google.maps.Map(document.getElementById('map'), {
+	  	map = new google.maps.Map(document.getElementById('map'), {
 	    	zoom: 6,
 	    	center: cameraPos
 	  	});
 	
-	  	var icon = {
+	  	icon = {
 			url: 'images/drone.png',
 			scaledSize: new google.maps.Size(50,50)
 		}	
 		list = <?php echo $onlineflights; ?>;
 
+		putMarkers(list, map, icon);		    
+	}
+
+	var HttpClient = function() {
+	    this.get = function(aUrl, aCallback) {
+	        var anHttpRequest = new XMLHttpRequest();
+	        anHttpRequest.onreadystatechange = function() { 
+	            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+	                aCallback(anHttpRequest.responseText);
+	        }
+	        anHttpRequest.open( "GET", aUrl, true );            
+	        anHttpRequest.send( null );
+	    }
+	}
+	
+	
+	var myVar = setInterval(myTimer, 2000);
+	function myTimer() {	 
+		var client = new HttpClient();
+		client.get('http://hidroneapi.azurewebsites.net/api/onlineflights', function(response) {
+			var listGet = JSON.parse(response);
+		    markersListNew = listGet.data;
+			console.log("xx "+markersListNew.length)
+			compareMarkers(markersListOld, markersListNew);
+		});
+	}
+
+	function putMarkers(list, map, icon){
 		if(list){
-			for (var drone in list){
-			    var markerPos = {lat: list[drone].Lat, lng: list[drone].Lon};
+			for (var i in list){
+			    var markerPos = {lat: list[i].Lat, lng: list[i].Lon};
 			    var marker = new google.maps.Marker({
 			      position: markerPos,
 			      map: map,
 			      animation: google.maps.Animation.DROP,
 			      icon: icon,
-			      title:list[drone].username
+			      title:list[i].username,
+			      bdId: list[i].id
 			    });
-			    var content = list[drone].username+" is flying with a "+list[drone].drone;
+			    markersListOld.push(marker);
+			    var content = list[i].username+" is flying with a "+list[i].drone;
 			    var infowindow = new google.maps.InfoWindow()
 			    google.maps.event.addListener(marker, 'click', (function(marker, content, infowindow) {
 			     return function() {
@@ -172,7 +186,49 @@
 			     }
 			 })(marker, content, infowindow));
 			}
-		}		    
+		}	
+	}
+
+	function compareMarkers(oldMarkers, newMarkers){
+		var newMarkersToAdd = new Array();
+
+		for (var i in newMarkers){
+			var found = false;
+			for (var j in oldMarkers){
+				if(newMarkers[i].id == oldMarkers[j].bdId){
+					var latlng = {lat: newMarkers[i].Lat, lng: newMarkers[i].Lon};
+					oldMarkers[j].setPosition(latlng);
+					found = true;
+				}
+				if (found){
+					break;
+				}
+			}
+			if (!found){
+				newMarkersToAdd.push(newMarkers[i]);
+			}
+		}
+		if (newMarkersToAdd.length>0){
+			putMarkers(newMarkersToAdd, map, icon);
+		}
+
+		for (var k in oldMarkers){
+			var found = false;
+
+			for(var l in newMarkers){
+				if(oldMarkers[k].bdId == newMarkers[l].id){
+					found = true;
+				}
+				if (found){
+					break;
+				}
+			}
+			if (!found){
+				oldMarkers[k].setMap(null);
+			}
+		}
+		
+		
 	}
 	
 </script>

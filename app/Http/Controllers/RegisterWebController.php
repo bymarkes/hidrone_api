@@ -38,6 +38,12 @@ class RegisterWebController extends Controller
      */
     public function store(Request $request)
     {
+        $pass = sha1($request->Contrasenya);
+        $request->Contrasenya = $pass;
+         
+        $request->request->add(['n_drones' => 0]);
+        $request->request->add(['n_vols' => 0]);
+
         $newusuari = Usuari::create($request->all());
         return view('welcome');
     }
