@@ -5,7 +5,7 @@
             <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
             <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-            <link rel="icon" href="favicon.ico" type="images/favicon.ico" />   
+            <link rel="icon" href="images/favicon.ico" type="image/x-icon" />   
       </head>
       @yield('bodysplash')
       <body>
