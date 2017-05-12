@@ -59,39 +59,85 @@
 	    .sidenav {padding-top: 15px;}
 	    .sidenav .row {font-size: 18px;}
 	}
+	#social {
+	  margin-left: 20px;
+	  text-align: center;
+	}
+
+	.smGlobalBtn{ /* global button class */
+	    display: inline-block;
+	    cursor: pointer;
+	    width: 50px;
+	    height: 50px;
+	    box-shadow: 0 2px 2px #999;
+	    padding: 0px;
+	    text-decoration: none;
+	    text-align: center;
+	    color: #fff;
+	    font-size: 25px;
+	    font-weight: normal;
+	    line-height: 2em;
+	    border-radius: 25px;
+	    -moz-border-radius:25px;
+	    -webkit-border-radius:25px;
+	    position: fixed; 
+    	bottom: 80px; 
+	    background: #4060A5;
+	}
+
 </style>
 <script>
 	function openNav() {
-	    document.getElementById("mySidenav").style.width = "250px";
-	}
-
-	function closeNav() {
-	    document.getElementById("mySidenav").style.width = "0";
+		if(document.getElementById("mySidenav").style.width == "250px"){
+	    	document.getElementById("mySidenav").style.width = "0";
+		}else{
+	    	document.getElementById("mySidenav").style.width = "250px";
+		}
 	}
 </script>
 @section('livedrones')
-	<span onclick="openNav()">open</span>
-	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<div id="social">
+		<span class="smGlobalBtn" onclick="openNav()">open</span>
+	</div>
+	
 @stop
 
 @section('body')
-    <div id="mySidenav" class="sidenav">
-  		<div class="row">
-  		ONLINE FLIGHTS
-  		</div>
-      	@foreach($onlineflights as $drone)
-      		<div class="row">
-      			{{$drone->username}}
-      			</br>
-      			<div class="drone">
-      				{{$drone->drone}}
-      			</div>
-      		</div>		
-		@endforeach
-    </div>
 
-<div id="map"></div>
-	
+<div id="mySidenav" class="sidenav">
+		<div class="row">
+			ONLINE FLIGHTS
+		</div>
+  	@foreach($onlineflights as $drone)
+  		<div class="row">
+  			{{$drone->username}}
+  			</br>
+  			<div class="drone">
+  				{{$drone->drone}}
+  			</div>
+  		</div>		
+	@endforeach
+</div>
+
+<div id="map">
+	<div class="tile">
+		<div class="float menu-share">
+			<i class="fa fa-share my-float"></i>
+		</div>
+		<div class="soc">
+			<a href="#" class="facebook">
+				<i class="fa fa-facebook"></i>
+			</a>
+			<a href="#" class="google-plus">
+				<i class="fa fa-google-plus"></i>
+			</a>
+			<a href="#" class="twitter">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</div>
+	</div>
+</div>
+
 <script>
 	var list;
 	function initMap() {
