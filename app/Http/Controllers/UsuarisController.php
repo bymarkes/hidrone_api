@@ -41,10 +41,15 @@ class UsuarisController extends Controller
      */
     public function store(Request $request)
     {
-       $newusuari = Usuari::create($request->all());
        
-       //OK
-       return response()->json(['status'=>'ok'],200);
+       $usuari = Usuari::whereRaw('Nick = ? ', [$request->Nick])->get()->first();
+        if ($usuari){
+                return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Nick already choosen'])],404);
+        }else{
+            $newusuari = Usuari::create($request->all());
+           //OK
+           return response()->json(['status'=>'ok'],200);
+        }    
     }
 
     /**

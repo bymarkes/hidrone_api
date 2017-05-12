@@ -8,6 +8,12 @@
     The username or password is incorrect!
   </div>
   @endif
+  @if($data=="ERROR2")
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    The username is already choosen!
+  </div>
+  @endif
   <div class="form">
     <form class="register-form" method="post" action="{{url('register')}}">
       <input type="text" class="input" name="Nom" placeholder="Name"/>

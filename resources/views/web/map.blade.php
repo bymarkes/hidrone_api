@@ -89,6 +89,7 @@
 	    	document.getElementById("mySidenav").style.width = "0";
 		}else{
 	    	document.getElementById("mySidenav").style.width = "250px";
+	    	document.getElementById("mySidenav").innerHTML ='';
 		}
 	}
 </script>
@@ -101,9 +102,9 @@
 @section('body')
 
 <div id="mySidenav" class="sidenav">
-		<div class="row">
-			ONLINE FLIGHTS
-		</div>
+	<div class="row">
+		ONLINE FLIGHTS
+	</div>
   	@foreach($onlineflights as $drone)
   		<div class="row">
   			{{$drone->username}}
