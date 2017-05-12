@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Index')
+@section('title', 'Live Map')
 <style>
    #map {
     height: 100%;

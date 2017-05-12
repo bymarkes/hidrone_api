@@ -1,6 +1,6 @@
 @extends('layouts.master2')
 
-@section('title', 'Index')
+@section('title', 'Welcome')
 <head>
   <style> .splash { position: relative; top: 0; left: 0; } 
           .up { position: absolute; top: 0px; left: 0px; width: 20%; height: auto; margin-left: 10%;
