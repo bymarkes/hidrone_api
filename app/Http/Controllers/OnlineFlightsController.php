@@ -42,9 +42,9 @@ class OnlineFlightsController extends Controller
     public function store(Request $request)
     {
         $newOnlineFlight = OnlineFlight::create($request->all());
-        
+
         //OK
-        return response()->json(['status'=>'ok'],200); 
+        return response()->json(['status'=>'ok','id'=>$newOnlineFlight->id],200); 
     }
 
     /**
