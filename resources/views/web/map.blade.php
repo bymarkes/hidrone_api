@@ -153,14 +153,17 @@
 	    }
 	}
 	
-	
+	var timeoutMap = setInterval(timeoutSession, 5000);
+	function timeoutSession() {
+		window.location.replace("http://hidroneapi.azurewebsites.net/");
+	}
+
 	var myVar = setInterval(myTimer, 2000);
 	function myTimer() {	 
 		var client = new HttpClient();
 		client.get('http://hidroneapi.azurewebsites.net/api/onlineflights', function(response) {
 			var listGet = JSON.parse(response);
 		    markersListNew = listGet.data;
-			console.log("xx "+markersListNew.length)
 			compareMarkers(markersListOld, markersListNew);
 		});
 	}
@@ -227,9 +230,7 @@
 			if (!found){
 				oldMarkers[k].setMap(null);
 			}
-		}
-		
-		
+		}		
 	}
 	
 </script>
