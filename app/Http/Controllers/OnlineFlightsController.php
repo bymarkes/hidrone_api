@@ -121,9 +121,9 @@ class OnlineFlightsController extends Controller
         {
             return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
         }else{
-            $onlineflights->delete();
+            $onlineflight->delete();
             //OK
-            return response()->json(['status'=>'ok'],200); 
+            return response()->json(['status'=>'ok destroy'],200); 
         }
     }
 }
