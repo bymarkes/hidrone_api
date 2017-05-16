@@ -41,28 +41,23 @@ class OnlineFlightsController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $request->id;
-        if($id){
-            $editOnlineFlight = OnlineFlight::find($id);
-
-            if($request->verb = "delete"){
-             $editOnlineFlight->delete();
-             //OK
-             return response()->json(['status'=>'ok destroy'],200); 
-             
-            }else if($request->verb = "update"){
-             $editOnlineFlight->update($request->all());
-             //OK
-             return response()->json(['status'=>'ok edit'],200); 
-            }
-           
-        }else{
+        if($request->verb = "create"){
             $newOnlineFlight = OnlineFlight::create($request->all());
             //OK
-            return response()->json(['status'=>'ok','id'=>$newOnlineFlight->id],200); 
-        }
-
+            return response()->json(['status'=>'ok create','id'=>$newOnlineFlight->id],200);
         
+        }else if($request->verb = "delete"){
+            $OnlineFlight = OnlineFlight::find($request->id);
+            $OnlineFlight->delete();
+            //OK
+            return response()->json(['status'=>'ok destroy'],200); 
+        
+        }else if($request->verb = "update"){
+            $OnlineFlight = OnlineFlight::find($request->id);
+            $OnlineFlight->update($request->all());
+            //OK
+            return response()->json(['status'=>'ok edit'],200); 
+        }     
     }
 
     /**
