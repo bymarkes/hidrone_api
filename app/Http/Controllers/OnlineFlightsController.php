@@ -44,10 +44,18 @@ class OnlineFlightsController extends Controller
         $id = $request->id;
         if($id){
             $editOnlineFlight = OnlineFlight::find($id);
-            $editOnlineFlight->update($request->all());
-            //OK
-            return response()->json(['status'=>'ok edit'],200); 
 
+            if($request->verb = "delete"){
+             $editOnlineFlight->delete();
+             //OK
+             return response()->json(['status'=>'ok destroy'],200); 
+             
+            }else if($request->verb = "update"){
+             $editOnlineFlight->update($request->all());
+             //OK
+             return response()->json(['status'=>'ok edit'],200); 
+            }
+           
         }else{
             $newOnlineFlight = OnlineFlight::create($request->all());
             //OK
