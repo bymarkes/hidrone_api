@@ -117,7 +117,7 @@ class OnlineFlightsController extends Controller
     public function destroy($id)
     {
         $onlineflight = OnlineFlight::find($id);
-        if (!$onlineflights)
+        if (!$onlineflight)
         {
             return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'OnlineFlight Not Found'])],404);
         }else{
