@@ -89,7 +89,6 @@
 	    	document.getElementById("mySidenav").style.width = "0";
 		}else{
 	    	document.getElementById("mySidenav").style.width = "250px";
-	    	//document.getElementById("mySidenav").innerHTML ='';
 		}
 	}
 </script>
@@ -100,20 +99,8 @@
 @stop
 
 @section('body')
-
 <div id="mySidenav" class="sidenav">
-	<div class="row">
-		ONLINE FLIGHTS
-	</div>
-  	@foreach($onlineflights as $drone)
-  		<div class="row" id="{{$drone->id}}" onclick="selectMarker(this.id)">
-  			{{$drone->username}}
-  			</br>
-  			<div class="drone">
-  				{{$drone->drone}}
-  			</div>
-  		</div>		
-	@endforeach
+	
 </div>
 
 <div id="map">
@@ -187,6 +174,8 @@
 		    markersListNew = listGet.data;
 			compareMarkers(markersListOld, markersListNew);
 		});
+
+		document.getElementById("mySidenav").innerHTML ='<div class="row">ONLINE FLIGHTS</div> @foreach($onlineflights as $drone) <div class="row" id="{{$drone->id}}" onclick="selectMarker(this.id)"> {{$drone->username}} </br> <div class="drone"> {{$drone->drone}} </div> </div>@endforeach';
 	}
 	var infowindow;
 	function putMarkers(list, map, icon){
