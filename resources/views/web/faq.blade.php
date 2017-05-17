@@ -1,27 +1,7 @@
 @extends('layouts.master')
-@section('title', 'Time Out')
+@section('title', 'FAQ hiDrone')
   <script>
-      if (jQuery(".toggle .toggle-title").hasClass("active")) {
-          jQuery(".toggle .toggle-title.active")
-            .closest(".toggle")
-            .find(".toggle-inner")
-            .show();
-        }
-        jQuery(".toggle .toggle-title").click(function() {
-          if (jQuery(this).hasClass("active")) {
-            jQuery(this)
-              .removeClass("active")
-              .closest(".toggle")
-              .find(".toggle-inner")
-              .slideUp(200);
-          } else {
-            jQuery(this)
-              .addClass("active")
-              .closest(".toggle")
-              .find(".toggle-inner")
-              .slideDown(200);
-          }
-        });
+      
   </script>
 <style>
   /* Styles for page */
@@ -117,10 +97,7 @@ p {
 @section('body')
 <div class="container-faq">
   <section>
-    <h1 class="faq"> Frequently Asked Questions</h1>
-    <a href="http://arielbeninca.com" target="_blank">
-      <p>The Smart Way To Answer Questions - By Ariel Beninc<span>a</span></p>
-    </a>
+    <h1 class="faq"> Frequently Asked Questions</h1> 
   </section>
   <div class="toggle">
     <div class="toggle-title">
