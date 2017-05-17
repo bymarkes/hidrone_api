@@ -51,6 +51,7 @@ class OnlineFlightsController extends Controller
             $newOnlineFlight = OnlineFlight::create($request->all());
             //OK
             return response()->json(['status'=>'ok create','id'=>$newOnlineFlight->id],200);
+        }
     }
 
     /**
