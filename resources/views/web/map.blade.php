@@ -178,9 +178,9 @@
 	}
 
 	function onlineflightsList() {	 
-		var htmlOnlineFlights ='<div class="row">ONLINE FLIGHTS</div> ';
-		for (var i = 0; i<markersListOld.length; i++){
-			htmlOnlineFlights = htmlOnlineFlights + '<div class="row" id="'+markersListOld[i].bdId+'" onclick="selectMarker(this.id)"> '+markersListOld[i].title+' </br> <div class="drone"> '+markersListOld[i].drone+' </div> </div>';
+		var htmlOnlineFlights ='<div class="row">ONLINE FLIGHTS</div>';
+		for (var i = 0; i<markersListNew.length; i++){
+			htmlOnlineFlights = htmlOnlineFlights + '<div class="row" id="'+markersListNew[i].id+'" onclick="selectMarker(this.id)"> '+markersListNew[i].username+' </br> <div class="drone"> '+markersListNew[i].drone+' </div> </div>';
 		}
 		document.getElementById("mySidenav").innerHTML = htmlOnlineFlights;
 	}
