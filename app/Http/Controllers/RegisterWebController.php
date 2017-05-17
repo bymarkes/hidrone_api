@@ -39,6 +39,7 @@ class RegisterWebController extends Controller
     public function store(Request $request)
     {
         $error = "ERROR2";
+        $correct ="User created";
         $usuari = Usuari::whereRaw('Nick = ? ', [$request->Nick])->get()->first();
         if ($usuari){
             return view('web.login')->with('data',$error); 
@@ -48,7 +49,7 @@ class RegisterWebController extends Controller
             
             $newusuari = Usuari::create($request->all());
            //OK
-            return view('welcome');
+               return view('web.login')->with('data',$correct);  
         } 
     }
 

@@ -59,6 +59,7 @@ class OnlineFlightsController extends Controller
             $updateOnlineFlight->update($request->all());
             //OK
             return response()->json(['status'=>'ok edit'],200); 
+            
         }
     }
 

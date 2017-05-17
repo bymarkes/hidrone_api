@@ -14,6 +14,12 @@
     The username is already choosen!
   </div>
   @endif
+   @if($data=="User created")
+  <div class="alert" style="background-color:#20BF55;">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    User created correctly.
+  </div>
+  @endif
   <div class="form">
     <form class="register-form" method="post" action="{{url('register')}}">
       <input type="text" class="input" name="Nom" placeholder="Name"/>

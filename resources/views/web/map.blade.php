@@ -106,7 +106,7 @@
 		ONLINE FLIGHTS
 	</div>
   	@foreach($onlineflights as $drone)
-  		<div class="row">
+  		<div class="row" id="{{$drone->id}}" onclick="selectMarker(this.id)">
   			{{$drone->username}}
   			</br>
   			<div class="drone">
@@ -127,6 +127,19 @@
 	var icon;
 	var icon2;
 	var markerSelected;
+
+	function selectMarker(id) {
+		for (var i = 0; i<markersListOld.length; i++) {
+			if (markersListOld[i].bdId == id){
+				markerSelected = markersListOld[i];
+				markersListOld[i].setIcon(icon2);
+				map.panTo(markerSelected.getPosition());
+			}else{
+				markersListOld[i].setIcon(icon);
+			}
+		}
+	}
+
 	function initMap() {
 	  	var cameraPos = {lat: 41.2, lng: 2.5};
 	  	map = new google.maps.Map(document.getElementById('map'), {
@@ -185,7 +198,7 @@
 			      map: map,
 			      animation: google.maps.Animation.DROP,
 			      icon: icon,
-			      title:list[i].username,
+			      title: list[i].username,
 			      bdId: list[i].id
 			    });
 			    markersListOld.push(marker);
