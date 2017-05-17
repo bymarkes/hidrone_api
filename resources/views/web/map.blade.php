@@ -191,7 +191,7 @@
 			htmlOnlineFlights = htmlOnlineFlights + '<div class="row" id="'+markersListNew[i].id+'" onclick="selectMarker(this.id)"> '+markersListNew[i].username+' </br> <div class="drone"> '+markersListNew[i].drone+' </div> </div>';
 		}
 		if(markersListNew.length == 0){
-			document.getElementById("mySidenav").innerHTML = '<div class="row-min">Clear Skies</div>'
+			document.getElementById("mySidenav").innerHTML = htmlOnlineFlights+'<div class="row-min">Clear Skies</div>'
 		}else{
 			document.getElementById("mySidenav").innerHTML = htmlOnlineFlights;
 		}
