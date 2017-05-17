@@ -173,15 +173,18 @@
 			var listGet = JSON.parse(response);
 		    markersListNew = listGet.data;
 			compareMarkers(markersListOld, markersListNew);
-		});
+			onlineflightsList();
+		});		
+	}
 
+	function onlineflightsList() {	 
 		var htmlOnlineFlights ='<div class="row">ONLINE FLIGHTS</div> ';
 		for (var i = 0; i<markersListOld.length; i++){
 			htmlOnlineFlights = htmlOnlineFlights + '<div class="row" id="'+markersListOld[i].bdId+'" onclick="selectMarker(this.id)"> '+markersListOld[i].title+' </br> <div class="drone"> '+markersListOld[i].drone+' </div> </div>';
 		}
 		document.getElementById("mySidenav").innerHTML = htmlOnlineFlights;
-		
 	}
+
 	var infowindow;
 	function putMarkers(list, map, icon){
 		if(list){
