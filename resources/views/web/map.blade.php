@@ -159,7 +159,7 @@
 	    }
 	}
 	
-	var timeoutMap = setInterval(timeoutSession, 2000);
+	var timeoutMap = setInterval(timeoutSession, 300000);
 	function timeoutSession() {
 		window.location.replace("http://hidroneapi.azurewebsites.net/timeout");
 	}

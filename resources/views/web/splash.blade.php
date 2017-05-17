@@ -16,6 +16,10 @@
 <body>
     <img class="splash" src="images/mapa2.png" style="width: 100%" style="position: relative;">
     <img class="up" src="images/hisplash.png" style="position: absolute;">
-    <button type="button" class="btn btn-primary btn-lg" id="check1"><a href="{{url('/map')}}">ENTER </a></button>
+    <a href="{{url('/map')}}">
+        <button type="button" class="btn btn-primary btn-lg" id="check1">
+            GO TO LIVE MAP 
+        </button>
+    </a>
 </body>
 @endsection
