@@ -122,6 +122,8 @@ class OnlineFlightsController extends Controller
      */
     public function destroy($id)
     {
+        return "hola";
+        /*
         $onlineflight = OnlineFlight::find($id);
         if (!$onlineflight)
         {
@@ -130,6 +132,6 @@ class OnlineFlightsController extends Controller
             $onlineflight->delete();
             //OK
             return response()->json(['status'=>'ok destroy'],200); 
-        }
+        }*/
     }
 }
