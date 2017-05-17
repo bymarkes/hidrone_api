@@ -19,6 +19,10 @@ Route::get('/contact', function () {
     return view('web.contact');
 });
 
+Route::get('/timeout', function () {
+    return view('web.timeout');
+});
+
 Route::get('/about', function () {
     return view('web.about');
 });
