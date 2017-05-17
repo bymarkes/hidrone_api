@@ -125,6 +125,8 @@
 	var markersListNew;
 	var map;
 	var icon;
+	var icon2;
+	var markerSelected;
 	function initMap() {
 	  	var cameraPos = {lat: 41.2, lng: 2.5};
 	  	map = new google.maps.Map(document.getElementById('map'), {
@@ -135,7 +137,11 @@
 	  	icon = {
 			url: 'images/drone.png',
 			scaledSize: new google.maps.Size(50,50)
-		}	
+		}
+		icon2 = {
+			url: 'images/droneBlue.png',
+			scaledSize: new google.maps.Size(50,50)
+		}		
 		list = <?php echo $onlineflights; ?>;
 
 		putMarkers(list, map, icon);		    
@@ -161,13 +167,15 @@
 	var myVar = setInterval(myTimer, 2000);
 	function myTimer() {	 
 		var client = new HttpClient();
+		//'http://hidroneapi.azurewebsites.net/api/onlineflights'
+		//'http://localhost/hidrone_api/public/api/onlineflights'
 		client.get('http://hidroneapi.azurewebsites.net/api/onlineflights', function(response) {
 			var listGet = JSON.parse(response);
 		    markersListNew = listGet.data;
 			compareMarkers(markersListOld, markersListNew);
 		});
 	}
-
+	var infowindow;
 	function putMarkers(list, map, icon){
 		if(list){
 			for (var i in list){
@@ -182,11 +190,17 @@
 			    });
 			    markersListOld.push(marker);
 			    var content = list[i].username+" is flying with a "+list[i].drone;
-			    var infowindow = new google.maps.InfoWindow()
+			    infowindow = new google.maps.InfoWindow()
 			    google.maps.event.addListener(marker, 'click', (function(marker, content, infowindow) {
 			     return function() {
+			       map.panTo(marker.getPosition());
 			       infowindow.setContent(content);
 			       infowindow.open(map, marker);
+			       for (var j = 0; j < markersListOld.length; j++) {
+				      markersListOld[j].setIcon(icon);
+				    }
+				    marker.setIcon(icon2);
+				    markerSelected=marker;
 			     }
 			 })(marker, content, infowindow));
 			}
@@ -205,6 +219,10 @@
 					found = true;
 				}
 				if (found){
+					if(markerSelected){
+						if(markerSelected.bdId == oldMarkers[j].bdId)
+						map.panTo(markerSelected.getPosition());
+					}
 					break;
 				}
 			}
