@@ -28,6 +28,14 @@
 	    display: block;
 	    transition: 0.3s
 	}
+	.row-min {
+	    padding: 8px 8px 8px 32px;
+	    text-decoration: none;
+	    font-size: 15px;
+	    color: white;
+	    display: block;
+	    transition: 0.3s
+	}
 	.drone{
 	    font-size: 15px;
 	}
@@ -182,7 +190,11 @@
 		for (var i = 0; i<markersListNew.length; i++){
 			htmlOnlineFlights = htmlOnlineFlights + '<div class="row" id="'+markersListNew[i].id+'" onclick="selectMarker(this.id)"> '+markersListNew[i].username+' </br> <div class="drone"> '+markersListNew[i].drone+' </div> </div>';
 		}
-		document.getElementById("mySidenav").innerHTML = htmlOnlineFlights;
+		if(markersListNew.length == 0){
+			document.getElementById("mySidenav").innerHTML = '<div class="row-min">Clear Skies</div>'
+		}else{
+			document.getElementById("mySidenav").innerHTML = htmlOnlineFlights;
+		}
 	}
 
 	var infowindow;
