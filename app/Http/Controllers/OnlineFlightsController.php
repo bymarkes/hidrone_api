@@ -47,7 +47,6 @@ class OnlineFlightsController extends Controller
             $editOnlineFlight->update($request->all());
             //OK
             return response()->json(['status'=>'ok edit'],200); 
-
         }else{
             $newOnlineFlight = OnlineFlight::create($request->all());
             //OK
