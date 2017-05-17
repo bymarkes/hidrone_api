@@ -175,7 +175,12 @@
 			compareMarkers(markersListOld, markersListNew);
 		});
 
-		document.getElementById("mySidenav").innerHTML ='<div class="row">ONLINE FLIGHTS</div> @foreach($onlineflights as $drone) <div class="row" id="{{$drone->id}}" onclick="selectMarker(this.id)"> {{$drone->username}} </br> <div class="drone"> {{$drone->drone}} </div> </div>@endforeach';
+		var htmlOnlineFlights ='<div class="row">ONLINE FLIGHTS</div> ';
+		for (var i = 0; i<markersListOld.length; i++){
+			htmlOnlineFlights = htmlOnlineFlights + '<div class="row" id="'+markersListOld[i].bdId+'" onclick="selectMarker(this.id)"> '+markersListOld[i].title+' </br> <div class="drone"> '+markersListOld[i].drone+' </div> </div>';
+		}
+		document.getElementById("mySidenav").innerHTML = htmlOnlineFlights;
+		
 	}
 	var infowindow;
 	function putMarkers(list, map, icon){
@@ -188,7 +193,8 @@
 			      animation: google.maps.Animation.DROP,
 			      icon: icon,
 			      title: list[i].username,
-			      bdId: list[i].id
+			      bdId: list[i].id,
+			      drone: list[i].drone
 			    });
 			    markersListOld.push(marker);
 			    var content = list[i].username+" is flying with a "+list[i].drone;
