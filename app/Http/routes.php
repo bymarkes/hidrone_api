@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('web.splash');
 });
 
+Route::get('/faq', function () {
+    return view('web.faq');
+});
+
 Route::get('/contact', function () {
     return view('web.contact');
 });

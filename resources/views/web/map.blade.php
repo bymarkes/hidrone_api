@@ -3,7 +3,7 @@
 @section('title', 'Live Map')
 <style>
    #map {
-    height: 100%;
+    height: 94%;
     width: 100%;
    }
 
