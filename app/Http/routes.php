@@ -41,7 +41,7 @@ Route::resource('api/usuaris', 'UsuarisController', ['except'=>['create','edit']
 
 Route::resource('api/usuaris.drones', 'DronesController', ['except'=>['create','edit']]);
 
-Route::resource('api/onlineflights', 'OnlineFlightsController', ['except'=>['create','edit']]);
+Route::resource('api/onlineflights', 'OnlineFlightsController', ['only'=>['store','index']]);
 
 Route::resource('api/login', 'LoginController', ['only'=>['store','destroy']]);
 
@@ -51,7 +51,6 @@ Route::resource('api/login', 'LoginController', ['only'=>['store','destroy']]);
 //Route::resource('api/usuaris.missatges','MissatgesController', ['except'=>['create','edit']]);
 
 //Route::resource('api/usuaris.drones.vol', 'VolsController', ['except'=>['create','edit','update']]);
-
 
 /*TODO*/
 //Route::resource('api/token', 'TokensController', ['only'=>['store','destroy']]);
