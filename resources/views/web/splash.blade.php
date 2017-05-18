@@ -1,4 +1,6 @@
 <head>
+  <title>Welcome to hi Drone</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" /> 
 <style>
   body{
   width: 100%;
