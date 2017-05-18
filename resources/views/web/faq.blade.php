@@ -10,11 +10,10 @@
   color: white;
 }
 
-
-
 body {
   color: white;
 }
+
 body a {
   cursor: pointer;
   color: white;

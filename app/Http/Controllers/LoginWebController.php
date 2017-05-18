@@ -50,7 +50,7 @@ class LoginWebController extends Controller
 
                 unset($usuariDB->Contrasenya);
                 //OK
-                return redirect('/')->with('data',$usuariDB);
+                return view('web.profile')->with('data',$usuariDB);
             }else{
                 //Password incorrect
                return view('web.login')->with('data',$error);  

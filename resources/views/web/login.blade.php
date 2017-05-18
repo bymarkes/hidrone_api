@@ -32,7 +32,7 @@
     </form>
     <form class="login-form" method="post" action="{{url('login')}}">
       <input type="text" class="input" name="Nick" placeholder="Username"/>
-      <input type="text" class="input" name="Contrasenya" placeholder="Password"/>
+      <input type="password" class="input" name="Contrasenya" placeholder="Password"/>
        <button type="submit" class="button-submit">Entra</button>
       <p class="message">Not registered? <a rel="nofollow" rel="noreferrer" href="#">Create an account</a></p>
     </form>
