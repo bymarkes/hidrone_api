@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 html,
 body {
     height: 100%;
@@ -10,6 +12,9 @@ body {
     font-family: 'PT Sans', Arial, Verdana;
     margin: 0;
     overflow-x: hidden;
+}
+.site-wrap{
+    z-index: 4;
 }
 .main-container {
     top: 50%;
@@ -34,38 +39,42 @@ h1 {
     letter-spacing: 3px;
     color: #222;
 }
-.menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 50px;
-    margin: auto;
-    position: relative;
-    z-index: 7;
-    background-color: #19BBDE;
+/*Menu*/
+nav {
+  z-index: 4;
+  width: 100%;
+  height: 6%;
+  padding-top: 0.5%;
+  text-align: center;
+  font-family: Raleway;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
-ul {
-    display: flex;
+#nav-3 {
+  background: #19BDDE;
 }
-li {
-    width: 25%;
-    font-size: 16px;
-    height: 100%;
-    margin: 0;
-    padding: 15px;
-    text-align: center;
+.link-3 {
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
 }
-li a {
-    color: white;
+.link-3:hover {
+  background-color: #ffffff;
+  color: #19BDDE;
+  padding: 24px 10px;
+  text-decoration: none;
 }
-li a:hover {
-    color: white;
-    text-decoration: none;
-    color: #05272E;
+.active{
+  background-color: #ffffff;
+  color: #19BDDE;
+  padding: 24px 10px;
+  text-decoration: none;
 }
-/*CONTACT PAGE*/
 
+/*CONTACT PAGE*/
 .contact-page {
     width: 360px;
     padding: 8% 0 0;
@@ -73,7 +82,6 @@ li a:hover {
 }
 
 /*LOGIN PAGE*/
-
 .login-page {
     width: 360px;
     padding: 8% 0 0;
@@ -90,6 +98,7 @@ li a:hover {
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
 .form .input {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -101,6 +110,7 @@ li a:hover {
     box-sizing: border-box;
     font-size: 14px;
 }
+
 .button-submit {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -115,6 +125,7 @@ li a:hover {
     transition: all 0.3 ease;
     cursor: pointer;
 }
+
 .button-submit:hover,
 .button-submit:active,
 .button-submit:focus {

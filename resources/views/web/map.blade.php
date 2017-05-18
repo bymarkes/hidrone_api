@@ -5,13 +5,14 @@
    #map {
     height: 94%;
     width: 100%;
+    z-index: 1;
    }
 
    .sidenav {
+   		z-index: 3;
 	    height: 100%; /* 100% Full-height */
 	    width: 0; /* 0 width - change this with JavaScript */
 	    position: fixed; /* Stay in place */
-	    z-index: 1; /* Stay on top */
 	    top: 0;
 	    left: 0;
 	    background-color: #05272E; /* Black*/
@@ -67,13 +68,16 @@
 	    .sidenav {padding-top: 15px;}
 	    .sidenav .row {font-size: 18px;}
 	}
+
 	#social {
 	  margin-left: 20px;
 	  text-align: center;
+	  z-index: 1;
 	}
 
 	.smGlobalBtn{ /* global button class */
 	    display: inline-block;
+	  	z-index: 4;
 	    cursor: pointer;
 	    width: 8%;
 	    padding: 0px;
@@ -273,7 +277,7 @@
 			}
 		}		
 	}
-	
+	document.getElementById("map-page").classList.add('active');
 </script>
 <script async defer
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd21KjkoMYZm_A3xlui58HtxXd5TW0J1k&callback=initMap"></script>

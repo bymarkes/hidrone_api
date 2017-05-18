@@ -9,13 +9,14 @@
       @yield('bodysplash')
       <body>
             <div class ="site-wrap">
-              <ul class="menu">
                   @yield('livedrones')
-                  <li><a href="{{url('/map')}}">Live Map</a></li>
-                  <li><a href="{{url('/about')}}">About</a></li>
-                  <li><a href="{{url('/contact')}}">Contact</a></li>
-                  <li><a href="{{url('/login')}}">Sign In</a></li>
-              </ul>
+                  <nav id="nav-3">
+                    <a class="link-3" id ="map-page" href="{{url('/map')}}">Live Map</a>
+                    <a class="link-3" id ="about-page" href="{{url('/about')}}">About</a>
+                    <a class="link-3" id ="contact-page" href="{{url('/contact')}}">Contact</a>
+                    <a class="link-3" id ="signin-page" href="{{url('/login')}}">Sign In</a>
+                  </nav>
+              </div>
               @yield('body')
             <div class="footer">
              &copy; hiDrone 2017
