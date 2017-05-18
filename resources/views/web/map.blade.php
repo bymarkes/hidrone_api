@@ -177,7 +177,7 @@
 		window.location.replace("http://hidroneapi.azurewebsites.net/timeout");
 	}
 
-	var myVar = setInterval(myTimer, 2000);
+	var myVar = setInterval(myTimer, 1000);
 	function myTimer() {	 
 		var client = new HttpClient();
 		//'http://hidroneapi.azurewebsites.net/api/onlineflights'
