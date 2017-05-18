@@ -58,8 +58,10 @@ class OnlineFlightsController extends Controller
             $updateOnlineFlight = OnlineFlight::find($request->id);
             $updateOnlineFlight->update($request->all());
             //OK
-            return response()->json(['status'=>'ok edit'],200); 
-            
+            return response()->json(['status'=>'ok edit'],200);     
+        }else{
+            //Error
+            return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Bad request'])],404); 
         }
     }
 
