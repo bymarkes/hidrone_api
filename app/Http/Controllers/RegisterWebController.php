@@ -46,10 +46,12 @@ class RegisterWebController extends Controller
         }else{
             $request->request->add(['n_drones' => 0]);
             $request->request->add(['n_vols' => 0]);
-            
+            $sha1= sha1($request->Contrasenya);
+            unset($request->Contrasenya);
+            $request->request->add(['Contrasenya' => $sha1]);
             $newusuari = Usuari::create($request->all());
            //OK
-               return view('web.login')->with('data',$correct);  
+            return view('web.login')->with('data',$correct);  
         } 
     }
 

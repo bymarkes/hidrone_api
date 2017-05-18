@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'ERROR 503')
+@section('title', 'ERROR 404')
 @section('body')
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto:900);
@@ -121,8 +121,8 @@ width: 0;
 </style>
 <div id='oopss'>
     <div id='error-text'>
-        <span>503</span>
-        <p>BE RIGHT BACK</p><p class='hmpg'></p>
+        <span>404</span>
+        <p>PAGE NOT FOUND</p><p class='hmpg'></p>
     </div>
 </div>
 @endsection

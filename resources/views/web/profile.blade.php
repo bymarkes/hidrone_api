@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Sing In')
+@section('title', $data->Nom )
 <style>
 
 .table th,td{
@@ -21,7 +21,12 @@
   border-radius: 20px;
   top: 75px;
 }
-
+.name{
+  font-size: 25px;
+}
+.username{
+  font-size: 20px;
+}
 </style>
 @section('body')
 @if($data)
@@ -29,6 +34,8 @@
       <img src="images/surf.jpg" class="img-circle" alt="Profile"></img></br>
       <label class="name">{{$data->Nom}} {{$data->Cognom}}</label></br>
       <label class="username">{{$data->Nick}}</label>
+      </br>
+      <label class="descripcio">{{$data->descripcio}}</label>
     <div>
      <table class="table">
     <thead>

@@ -46,6 +46,9 @@ class LoginWebController extends Controller
             //User not found 
             return view('web.login')->with('data',$error);  
         } else {
+            $sha1= sha1($request->Contrasenya);
+            unset($request->Contrasenya);
+            $request->request->add(['Contrasenya' => $sha1]);
             if ($request->Contrasenya == $usuariDB->Contrasenya) {
 
                 unset($usuariDB->Contrasenya);
