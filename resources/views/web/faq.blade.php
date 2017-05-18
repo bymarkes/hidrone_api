@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'FAQ hiDrone')
+@section('title', 'Frequently Asked Questions')
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <style>
