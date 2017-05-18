@@ -10,9 +10,10 @@
   color: white;
 }
 
+
+
 body {
   color: white;
-  font-family: sans-serif;
 }
 body a {
   cursor: pointer;
