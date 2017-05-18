@@ -1,8 +1,7 @@
 @extends('layouts.master')
 @section('title', 'FAQ hiDrone')
-  <script>
-      
-  </script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <style>
   /* Styles for page */
 .container-faq {
@@ -76,6 +75,16 @@ p {
   display: block;
   padding: 25px 25px 14px;
 }
+
+.connect{
+  width: 20%;
+  height: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+
+}
+
 .toggle .toggle-title a i {
   font-size: 22px;
   margin-right: 5px;
@@ -90,11 +99,12 @@ p {
   margin: 20px;
   right: 0;
 }
-.toggle .toggle-title.active i {
+.toggle .toggle-title.active-faq i {
   background: url("http://arielbeninca.com/Storage/plus_minus.png") 0px 0px no-repeat;
 }
 </style>
 @section('body')
+
 <div class="container-faq">
   <section>
     <h1 class="faq"> Frequently Asked Questions</h1> 
@@ -103,11 +113,15 @@ p {
     <div class="toggle-title">
       <h3>
         <i></i>
-        <span class="title-name">Question 1?</span>
+        <span class="title-name">How to Stream</span>
       </h3>
     </div>
     <div class="toggle-inner">
-      <p>Astronomers face an embarrassing conundrum: they don't know what 95% of the universe is made of. Atoms, which form everything we see around us, only account for a measly 5%. Over the past 80 years it has become clear that the substantial remainder is comprised of two shadowy entities – dark matter and dark energy. The former, first discovered in 1933, acts as an invisible glue, binding galaxies and galaxy clusters together. Unveiled in 1998, the latter is pushing the universe's expansion to ever greater speeds. Astronomers are closing in on the true identities of these unseen interlopers.</p>
+      <p>At least you need one drone to stream. If you have one, then you should be able to.</br>
+        Switch on your drone and then open the sidenav menu and press Streaming. If everything is correct, you'll see "aircraft connected" and the streaming button enabled.
+      </p>
+      <img src="images/navbar.png" class="connect"></img>
+      <img src="images/connect.png" class="connect"></img>
     </div>
   </div>
   <!-- END OF TOGGLE -->
@@ -115,11 +129,16 @@ p {
     <div class="toggle-title">
       <h3>
         <i></i>
-        <span class="title-name">Question 2?</span>
+        <span class="title-name">How to change language</span>
       </h3>
     </div>
     <div class="toggle-inner">
-      <p>Four billion years ago, something started stirring in the primordial soup. A few simple chemicals got together and made biology – the first molecules capable of replicating themselves appeared. We humans are linked by evolution to those early biological molecules. But how did the basic chemicals present on early Earth spontaneously arrange themselves into something resembling life? How did we get DNA? What did the first cells look like? More than half a century after the chemist Stanley Miller proposed his "primordial soup" theory, we still can't agree about what happened. Some say life began in hot pools near volcanoes, others that it was kick-started by meteorites hitting the sea.</p>
+      <p>The language can be changed in Settings. If you have your phone set in English, then the application will be in English.</br>
+      In this version (1.0.0) HiDrone supports the following languages:</br></br>
+      -Spanish</br>
+      -English</br>
+      -Catalan</br></p>
+      <img src="images/language.png" class="connect"></img>
     </div>
   </div>
   <!-- END OF TOGGLE -->
@@ -127,11 +146,12 @@ p {
     <div class="toggle-title">
       <h3>
         <i></i>
-        <span class="title-name">Question 3?</span>
+        <span class="title-name">How to enable the GPS</span>
       </h3>
     </div>
     <div class="toggle-inner">
-      <p>Perhaps not. Astronomers have been scouring the universe for places where water worlds might have given rise to life, from Europa and Mars in our solar system to planets many light years away. Radio telescopes have been eavesdropping on the heavens and in 1977 a signal bearing the potential hallmarks of an alien message was heard. Astronomers are now able to scan the atmospheres of alien worlds for oxygen and water. The next few decades will be an exciting time to be an alien hunter with up to 60bn potentially habitable planets in our Milky Way alone.</p>
+      <p>In case you want to enable the GPS through HiDrone, go to Settings and press the Switch button.</br>
+      You'll be redirected to the Navigation Settings.  </p>
     </div>
   </div>
   <!-- END OF TOGGLE -->
@@ -139,7 +159,7 @@ p {
     <div class="toggle-title">
       <h3>
         <i></i>
-        <span class="title-name">Question 4?</span>
+        <span class="title-name">What is HiDrone?</span>
       </h3>
     </div>
     <div class="toggle-inner">
@@ -151,7 +171,7 @@ p {
     <div class="toggle-title">
       <h3>
         <i></i>
-        <span class="title-name">Question 5?</span>
+        <span class="title-name">What is Live Map?</span>
       </h3>
     </div>
     <div class="toggle-inner">
@@ -163,7 +183,7 @@ p {
     <div class="toggle-title">
       <h3>
         <i></i>
-        <span class="title-name">Question 6?</span>
+        <span class="title-name">What are Drones?</span>
       </h3>
     </div>
     <div class="toggle-inner">
@@ -171,17 +191,17 @@ p {
     </div>
   </div>
   <!-- END OF TOGGLE -->
-  <div class="toggle">
-    <div class="toggle-title">
-      <h3>
-        <i></i>
-        <span class="title-name">Question 7?</span>
-      </h3>
-    </div>
-    <div class="toggle-inner">
-      <p>You really shouldn't be here. The "stuff" you're made of is matter, which has a counterpart called antimatter differing only in electrical charge. When they meet, both disappear in a flash of energy. Our best theories suggest that the big bang created equal amounts of the two, meaning all matter should have since encountered its antimatter counterpart, scuppering them both and leaving the universe awash with only energy. Clearly nature has a subtle bias for matter otherwise you wouldn't exist. Researchers are sifting data from experiments like the Large Hadron Collider trying to understand why, with supersymmetry and neutrinos the two leading contenders.</p>
-    </div>
-  </div>
-  <!-- END OF TOGGLE -->
+  <script>
+  if( jQuery(".toggle .toggle-title").hasClass('active') ){
+    jQuery(".toggle .toggle-title.active-faq").closest('.toggle').find('.toggle-inner').show();
+  }
+  jQuery(".toggle .toggle-title").click(function(){
+    if( jQuery(this).hasClass('active-faq') ){
+      jQuery(this).removeClass("active-faq").closest('.toggle').find('.toggle-inner').slideUp(200);
+    }
+    else{ jQuery(this).addClass("active-faq").closest('.toggle').find('.toggle-inner').slideDown(200);
+    }
+  });
+</script>
 </div>
 @endsection

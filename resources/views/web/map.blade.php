@@ -71,8 +71,9 @@
 
 	#social {
 	  margin-left: 20px;
+	  position: absolute;
 	  text-align: center;
-	  z-index: 1;
+	  z-index: 4;
 	}
 
 	.smGlobalBtn{ /* global button class */

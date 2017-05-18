@@ -9,6 +9,7 @@
       @yield('bodysplash')
       <body>
             <div class ="site-wrap">
+                    <img src="images/hidrone_logo.png" style="width: 135px; left:50px; position: absolute; z-index: 5; top:-3px; ">
                   @yield('livedrones')
                   <nav id="nav-3">
                     <a class="link-3" id ="map-page" href="{{url('/map')}}">Live Map</a>
