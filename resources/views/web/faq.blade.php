@@ -193,6 +193,9 @@ p {
   </div>
   <!-- END OF TOGGLE -->
   <script>
+  document.getElementById("faq-page").classList.add('active');
+</script>
+  <script>
   if( jQuery(".toggle .toggle-title").hasClass('active') ){
     jQuery(".toggle .toggle-title.active-faq").closest('.toggle').find('.toggle-inner').show();
   }
@@ -204,5 +207,6 @@ p {
     }
   });
 </script>
+
 </div>
 @endsection

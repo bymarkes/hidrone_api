@@ -15,7 +15,7 @@
                     <a class="link-3" id ="map-page" href="{{url('/map')}}">Live Map</a>
                     <a class="link-3" id ="about-page" href="{{url('/about')}}">About</a>
                     <a class="link-3" id ="contact-page" href="{{url('/contact')}}">Contact</a>
-                    <a class="link-3" id ="contact-page" href="{{url('/faq')}}">FAQ</a>
+                    <a class="link-3" id ="faq-page" href="{{url('/faq')}}">FAQ</a>
                     <a class="link-3" id ="signin-page" href="{{url('/login')}}">Sign In</a>
                   </nav>
               </div>
