@@ -269,6 +269,7 @@
 			}
 			if (!found){
 				oldMarkers[k].setMap(null);
+				markersListOld.remove(oldMarkers[k]);
 			}
 		}		
 	}
