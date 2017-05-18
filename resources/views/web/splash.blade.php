@@ -78,7 +78,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lato|Roboto:400,900' rel='stylesheet' type='text/css'>
 <div class="container">
 <img src="images/hi3.png" class="hi"></img></br>
-  <a href="http://hidroneapi.azurewebsites.net/map" class="btn">
+  <a href="{{url('/map')}}" class="btn">
   <svg width="277" height="62">
     <defs>
         <linearGradient id="grad1">
@@ -88,7 +88,6 @@
     </defs>
      <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
   </svg>
-  <!--<span>Voir mes réalisations</span>-->
     <span>Welcome to HiDrone</span>
 </a>
 </div>
