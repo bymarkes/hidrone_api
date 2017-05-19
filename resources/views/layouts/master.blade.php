@@ -10,7 +10,7 @@
       <body>
             <div class ="site-wrap">
                   <a href="{{url('/')}}">
-                          <img src="images/hidrone_logo.png" href="{{url('/')}}" style="width: 135px; left:50px; position: absolute; z-index: 5; top:-3px; ">
+                          <img src="images/hidrone_logo.png" href="{{url('/')}}" style="height: 34; left:50px; position: absolute; z-index: 5; margin-top:3px; margin-bottom: 3px; ">
                   </a>
                   @yield('livedrones')
                   <nav id="nav-3">

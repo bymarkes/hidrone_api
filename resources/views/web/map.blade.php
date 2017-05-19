@@ -69,7 +69,7 @@
 	    .sidenav .row {font-size: 18px;}
 	}
 
-	#social {
+	#of-button {
 	  margin-left: 20px;
 	  position: absolute;
 	  text-align: center;
@@ -80,7 +80,7 @@
 	    display: inline-block;
 	  	z-index: 4;
 	    cursor: pointer;
-	    width: 8%;
+	    width: 150px;
 	    padding: 0px;
 	    text-decoration: none;
 	    text-align: center;
@@ -90,7 +90,7 @@
 	    font-weight: normal;
 	    line-height: 2em;
 	    position: fixed; 
-    	top: 9%; 
+    	top: 48px; 
     	right: 0.5%;
 	    background: #DF4444;
 	}
@@ -106,8 +106,11 @@
 	}
 </script>
 @section('livedrones')
-	<div id="social">
-		<span class="smGlobalBtn" onclick="openNav()">LIVE FLIGHTS</span>
+	<div id="of-button">
+		<span class="smGlobalBtn" onclick="openNav()">
+			<img src="images/record.png" style="height: 15px; padding-bottom: 3px; margin-right: 7px;">
+			LIVE FLIGHTS
+		</span>
 	</div>
 @stop
 
