@@ -157,6 +157,12 @@
 		}		
 		list = <?php echo $onlineflights; ?>;
 
+		google.maps.event.addListener(map, 'click', function(event) {
+		    if(markerSelected){
+					markerSelected.setIcon(icon);
+					markerSelected = null;
+				}
+		});
 		putMarkers(list, map, icon);		    
 	}
 
@@ -219,6 +225,7 @@
 			    markersListOld.push(marker);
 			    var content = list[i].username+" is flying with a "+list[i].drone;
 			    infowindow = new google.maps.InfoWindow()
+
 			    google.maps.event.addListener(marker, 'click', (function(marker, content, infowindow) {
 			     return function() {
 			       map.panTo(marker.getPosition());
@@ -278,6 +285,7 @@
 			}
 		}		
 	}
+
 	document.getElementById("map-page").classList.add('active');
 </script>
 <script async defer
