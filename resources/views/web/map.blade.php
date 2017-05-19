@@ -112,6 +112,11 @@
 			LIVE FLIGHTS
 		</span>
 	</div>
+	<div class="next">
+		<img class="img-responsive" src="images/next.png" style="width: 20px; position: absolute; z-index: 6; bottom: 20px; "> 
+
+
+	</div>
 @stop
 
 @section('body')
