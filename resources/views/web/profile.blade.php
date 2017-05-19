@@ -54,10 +54,10 @@
   </div>
 @else
 <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-    You are not logged in! 
-    </br>
-    Please Log In to visit your profile. 
-  </div>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  You are not logged in! 
+  </br>
+  Please Log In to visit your profile. 
+</div>
 @endif
 @endsection

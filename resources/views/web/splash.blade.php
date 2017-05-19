@@ -11,7 +11,7 @@
 .container{
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .btn {
@@ -67,10 +67,10 @@
     stroke-dashoffset: 437;
 }
 .hi{
-  width: 50%;
+  width: 300px;
   height: auto;
-  margin-bottom: -200px;
-  margin-left: 0px;
+  margin-bottom: -120px;
+  margin-left: -15px;
 }
 
 </style>
