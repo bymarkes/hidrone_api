@@ -46,7 +46,7 @@ class UsuarisController extends Controller
         if ($usuari){
                 return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Nick already choosen'])],404);
 
-        }else if($request->verb="update"){
+        }else if($request->verb=="update"){
             $usuari->update($request->all());
            //OK
             return response()->json(['status'=>'ok update','data'=>$usuari],200);
