@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\OnlineFlight;
+use App\Usuari;
 
 class OnlineFlightsController extends Controller
 {
