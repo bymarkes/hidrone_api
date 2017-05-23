@@ -1,6 +1,22 @@
 @extends('layouts.master')
 @section('title', 'Contact')
 @section('body')
+<style>
+	body section h1.faq {
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 10px;
+	font-size: 25px;
+	color: white;
+	line-height: 1.5;
+	margin-top: 80px;
+	margin-bottom: -20px;
+	}
+</style>
+<section>
+		<h1 class="faq"> CONTACT</h1>
+</section>
 <div class="contact-page">
   <div class="form">
    		{!! Form::open(array('')) !!}	

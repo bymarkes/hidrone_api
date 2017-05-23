@@ -23,8 +23,8 @@
                   </nav>
               </div>
               @yield('body')
-            <div class="footer">
+            <!--<div class="footer">
              &copy; hiDrone 2017
-            </div>
+            </div>-->
       </body>
 </html>

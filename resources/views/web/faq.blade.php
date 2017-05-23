@@ -6,7 +6,7 @@
   /* Styles for page */
 .container-faq {
   width: 70%;
-  margin: 150px auto;
+  margin: 80px auto;
   color: white;
 }
 
