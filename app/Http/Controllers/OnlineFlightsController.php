@@ -43,6 +43,9 @@ class OnlineFlightsController extends Controller
     {
         if($request->verb == "create"){
             $newOnlineFlight = OnlineFlight::create($request->all());
+            $usuari =  Usuari::whereRaw('Nick = ? ', [$request->username])->get()->first();
+            $vols = $usuari->n_vols;
+            $usuari->n_vols = $vols + 1;
             //OK
             return response()->json(['status'=>'ok create','id'=>$newOnlineFlight->id],200);
         
