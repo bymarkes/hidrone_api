@@ -48,6 +48,7 @@ class UsuarisController extends Controller
         } 
         
         if($request->verb=="update"){
+             unset($request->verb);
             $usuari->update($request->all());
            //OK
             return response()->json(['status'=>'ok update','data'=>$usuari],200);
