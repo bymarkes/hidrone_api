@@ -47,6 +47,12 @@ class DronesController extends Controller
     public function store(Request $request)
     {
         $newdrone = Drone::create($request->all());
+
+        $usuari = Usuari::find($request->usuari_id);
+        $drones = $usuari->n_drones;
+        $usuari->n_drones = $drones + 1;
+        $usuari->update($request->all());
+        
         //OK
         return response()->json(['status'=>'ok'],200);
     }

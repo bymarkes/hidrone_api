@@ -45,15 +45,8 @@ class UsuarisController extends Controller
        $usuari = Usuari::whereRaw('Nick = ? ', [$request->Nick])->get()->first();
         if ($usuari){
                 return response()->json(['status'=>'error','errors'=>array(['code'=>404,'message'=>'Nick already choosen'])],404);
-
         } 
-        if($request->verb=="addDrone"){
-            $drones = $usuari->n_drones;
-            $usuari->n_drones = $drones + 1;
-            $usuari->update($request->all());
-            //OK
-            return response()->json(['status'=>'ok'],200);
-        }
+        
         if($request->verb=="update"){
             $usuari->update($request->all());
            //OK
