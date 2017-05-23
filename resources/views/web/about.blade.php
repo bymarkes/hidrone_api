@@ -290,7 +290,7 @@
 	<!-- social -->
 	<div class="social-btns">
 		<a class="btn facebook" href="#" >
-			<i class="fa fa-facebook" src="images/facebook.png"></i>
+			<i class="fa fa-facebook" src="images/facebook-blue.png"></i>
 		</a>
 		<a class="btn twitter" href="#">
 			<i class="fa fa-twitter"></i>
