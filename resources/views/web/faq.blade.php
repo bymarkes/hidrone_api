@@ -163,7 +163,8 @@ p {
       </h3>
     </div>
     <div class="toggle-inner">
-      <p>Just looking at your DNA won't tell you – the human genome is 99% identical to a chimpanzee's and, for that matter, 50% to a banana's. We do, however, have bigger brains than most animals – not the biggest, but packed with three times as many neurons as a gorilla (86bn to be exact). A lot of the things we once thought distinguishing about us – language, tool-use, recognising yourself in the mirror – are seen in other animals. Perhaps it's our culture – and its subsequent effect on our genes (and vice versa) – that makes the difference. Scientists think that cooking and our mastery of fire may have helped us gain big brains. But it's possible that our capacity for co-operation and skills trade is what really makes this a planet of humans and not apes.</p>
+      <p>HiDrone is the first drone streaming application in the market. It allows you to watch the activity of the drones and it's telemetry.</br>
+      HiDrone shows you the drone tracking in realtime based on it's geo position.</p>
     </div>
   </div>
   <!-- END OF TOGGLE -->
@@ -175,7 +176,7 @@ p {
       </h3>
     </div>
     <div class="toggle-inner">
-      <p>It's a question we don't yet have the tools to answer. Einstein's general relativity says that when a black hole is created by a dying, collapsing massive star, it continues caving in until it forms an infinitely small, infinitely dense point called a singularity. But on such scales quantum physics probably has something to say too. Except that general relativity and quantum physics have never been the happiest of bedfellows – for decades they have withstood all attempts to unify them. However, a recent idea – called M-Theory – may one day explain the unseen centre of one of the universe's most extreme creations.</p>
+      <p>Our Live Map allows you to watch the drones that are flying in realtime. </p>
     </div>
   </div>
   <!-- END OF TOGGLE -->
@@ -187,7 +188,9 @@ p {
       </h3>
     </div>
     <div class="toggle-inner">
-      <p>We spend around a third of our lives sleeping. Considering how much time we spend doing it, you might think we'd know everything about it. But scientists are still searching for a complete explanation of why we sleep and dream. Subscribers to Sigmund Freud's views believed dreams were expressions of unfulfilled wishes – often sexual – while others wonder whether dreams are anything but the random firings of a sleeping brain. Animal studies and advances in brain imaging have led us to a more complex understanding that suggests dreaming could play a role in memory, learning and emotions. Rats, for example, have been shown to replay their waking experiences in dreams, apparently helping them to solve complex tasks such as navigating mazes.</p>
+      <p>
+       A Drone is an aircraft without a human pilot aboard. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV, a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers.
+       </p>
     </div>
   </div>
   <!-- END OF TOGGLE -->
