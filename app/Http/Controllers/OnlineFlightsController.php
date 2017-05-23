@@ -47,6 +47,7 @@ class OnlineFlightsController extends Controller
             $usuari =  Usuari::whereRaw('Nick = ? ', [$request->username])->get()->first();
             $vols = $usuari->n_vols;
             $usuari->n_vols = $vols + 1;
+            $usuari->update($request->all());
             //OK
             return response()->json(['status'=>'ok create','id'=>$newOnlineFlight->id],200);
         
