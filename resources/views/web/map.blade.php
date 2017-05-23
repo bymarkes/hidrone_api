@@ -289,7 +289,7 @@
 			}
 			if (!found){
 				oldMarkers[k].setMap(null);
-				markersListOld.remove(oldMarkers[k]);
+				markersListOld(oldMarkers[k]).remove;
 			}
 		}		
 	}
