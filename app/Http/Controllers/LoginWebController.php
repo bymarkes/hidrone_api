@@ -50,7 +50,16 @@ class LoginWebController extends Controller
             unset($request->Contrasenya);
             $request->request->add(['Contrasenya' => $sha1]);
             if ($request->Contrasenya == $usuariDB->Contrasenya) {
-
+                //Delete deprecated token
+                $tokenAntiga = Token::whereRaw('usuari_id = ? ', [$usuariDB->id])->get()->first();
+                if($tokenAntiga){
+                    $tokenAntiga->delete();
+                }
+                //generate token
+                $tokenKey = bin2hex(random_bytes(16));
+                
+                $params = array("token"=>$tokenKey, "usuari_id"=>$usuariDB->id);
+                $token = Token::create($params);
                 unset($usuariDB->Contrasenya);
                 //OK
                 return view('web.profile')->with('data',$usuariDB);

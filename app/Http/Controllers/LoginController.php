@@ -48,7 +48,9 @@ class LoginController extends Controller
             if ($request->Contrasenya == $usuariDB->Contrasenya) {
                 //Delete deprecated token
                 $tokenAntiga = Token::whereRaw('usuari_id = ? ', [$usuariDB->id])->get()->first();
-                $tokenAntiga->delete();
+                if($tokenAntiga){
+                    $tokenAntiga->delete();
+                }
                 //generate token
                 $tokenKey = bin2hex(random_bytes(16));
                 
