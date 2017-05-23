@@ -107,15 +107,10 @@
 </script>
 @section('livedrones')
 	<div id="of-button">
-		<span class="smGlobalBtn" onclick="openNav()">
+		<span class="smGlobalBtn" onclick="openNav()">	
 			<img src="images/record.png" style="height: 15px; padding-bottom: 3px; margin-right: 7px;">
 			LIVE FLIGHTS
 		</span>
-	</div>
-	<div class="next">
-		<img class="img-responsive" src="images/next.png" style="width: 20px; position: absolute; z-index: 6; bottom: 20px; "> 
-
-
 	</div>
 @stop
 

@@ -10,6 +10,7 @@
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
 	}
+	/*RESET*/
 	* {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -21,6 +22,7 @@
 	font-size: 13px;
 	direction: ltr;
 	}
+	/*END-RESET*/
 	.sectionClass {
 	padding: 0px 0px 20px 0px;
 	position: relative;
@@ -46,12 +48,7 @@
 	padding-right: 10px;
 	padding-left: 10px;
 	}
-	.headerLine {
-	width: 160px;
-	height: 2px;
-	display: inline-block;
-	background: #101F2E;
-	}
+
 	.projectFactsWrap{
 	display: flex;
 	margin-top: 30px;
@@ -60,6 +57,7 @@
 	}
 	#projectFacts .fullWidth{
 	padding: 0;
+	bottom: 0;
 	}
 	.projectFactsWrap .item{
 	width: 25%;
@@ -94,7 +92,6 @@
 	.projectFactsWrap .item span{
 	width: 60px;
 	background: rgba(255, 255, 255, 0.8);
-	height: 2px;
 	display: block;
 	margin: 0 auto;
 	}
@@ -115,7 +112,6 @@
 	}
 	}
 	/* share */
-	@import '//codepen.io/chrisdothtml/pen/ojLzJK.css';
 	.social-btns .btn,
 	.social-btns .btn:before,
 	.social-btns .btn .fa {
@@ -125,147 +121,117 @@
 	transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
 	}
 	.social-btns .btn:before {
-	top: 90%;
-	left: -110%;
+		top: 90%;
+		left: -110%;
 	}
 	.social-btns .btn .fa {
 	-webkit-transform: scale(0.8);
 	transform: scale(0.8);
 	}
 	.social-btns .btn.facebook:before {
-	background-color: #3b5998;
+		background-color: #3b5998;
 	}
 	.social-btns .btn.facebook .fa {
-	color: #3b5998;
+		color: #3b5998;
 	}
 	.social-btns .btn.twitter:before {
-	background-color: #3cf;
+		background-color: #3cf;
 	}
 	.social-btns .btn.twitter .fa {
-	color: #3cf;
+		color: #3cf;
 	}
 	.social-btns .btn.google:before {
-	background-color: #dc4a38;
+		background-color: #dc4a38;
 	}
 	.social-btns .btn.google .fa {
-	color: #dc4a38;
+		color: #dc4a38;
 	}
 	.social-btns .btn.dribbble:before {
-	background-color: #f26798;
+		background-color: #f26798;
 	}
 	.social-btns .btn.dribbble .fa {
-	color: #f26798;
+		color: #f26798;
 	}
 	.social-btns .btn.skype:before {
-	background-color: #00aff0;
+		background-color: #00aff0;
 	}
 	.social-btns .btn.skype .fa {
-	color: #00aff0;
+		color: #00aff0;
 	}
 	.social-btns .btn:focus:before,
 	.social-btns .btn:hover:before {
-	top: -10%;
-	left: -10%;
+		top: -10%;
+		left: -10%;
 	}
 	.social-btns .btn:focus .fa,
 	.social-btns .btn:hover .fa {
-	color: #fff;
-	-webkit-transform: scale(1);
-	transform: scale(1);
+		color: #fff;
+		-webkit-transform: scale(1);
+		transform: scale(1);
 	}
 	.social-btns {
-	margin: auto;
-	font-size: 0;
-	text-align: center;
-	position: relative;
+		margin-bottom:100px;
+		font-size: 0;
+		text-align: center;
+		position: relative;
 	}
 	.social-btns .btn {
-	display: inline-block;
-	background-color: #fff;
-	width: 45px;
-	height: 45px;
-	line-height: 90px;
-	margin: 0 10px;
-	text-align: center;
-	position: relative;
-	overflow: hidden;
-	border-radius: 28%;
-	box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
-	opacity: 0.99;
+		padding-top: 10px;
+		display: inline-block;
+		background-color: #fff;
+		width: 60px;
+		height: 60px;
+		line-height: 90px;
+		margin: 0 10px;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+		border-radius: 28%;
+		box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+		opacity: 0.99;
 	}
 	.social-btns .btn:before {
-	content: '';
-	width: 120%;
-	height: 120%;
-	position: absolute;
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
+		content: '';
+		width: 120%;
+		height: 120%;
+		position: absolute;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
 	}
 	.social-btns .btn .fa {
-	font-size: 38px;
-	vertical-align: middle;
+		font-size: 38px;
+		vertical-align: middle;
 	}
-	/* */
-	footer{
-	z-index: 100;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	width: 100%;
-	bottom: 0;
-	left: 0;
-	}
-	footer p {
-	color: rgba(255, 255, 255, 0.8);
-	font-size: 16px;
-	opacity: 0;
-	font-family: 'PT Sans', Arial, Verdana;
-	width: 100%;
-	word-wrap: break-word;
-	line-height: 25px;
-	-webkit-transform: translateX(-200px);
-	transform: translateX(-200px);
-	margin: 0;
-	-webkit-transition: all 250ms ease;
-	-moz-transition: all 250ms ease;
-	transition: all 250ms ease;
-	}
-	footer .authorWindow a{
-	color: white;
-	text-decoration: none;
-	}
-	footer p strong {
-	color: rgba(255, 255, 255, 0.9);
-	}
+
 	.about-me-img {
-	width: 120px;
-	height: 120px;
-	left: 10px;
-	/* bottom: 30px; */
-	position: relative;
-	border-radius: 100px;
+		width: 120px;
+		height: 120px;
+		left: 10px;
+		position: relative;
+		border-radius: 100px;
 	}
 	.about-me-img img {
 	}
 	.authorWindow{
-	width: 600px;
-	background: #75439a;
-	padding: 22px 20px 22px 20px;
-	border-radius: 5px;
-	overflow: hidden;
+		width: 600px;
+		background: #75439a;
+		padding: 22px 20px 22px 20px;
+		border-radius: 5px;
+		overflow: hidden;
 	}
 	.authorWindowWrapper{
-	display: none;
-	left: 110px;
-	top: 0;
-	padding-left: 25px;
+		display: none;
+		left: 110px;
+		top: 0;
+		padding-left: 25px;
 	}
 	.trans{
-	opacity: 1;
-	-webkit-transform: translateX(0px);
-	transform: translateX(0px);
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	transition: all 500ms ease;
+		opacity: 1;
+		-webkit-transform: translateX(0px);
+		transform: translateX(0px);
+		-webkit-transition: all 500ms ease;
+		-moz-transition: all 500ms ease;
+		transition: all 500ms ease;
 	}
 	@media screen and (max-width: 768px) {
 	.authorWindow{
@@ -279,10 +245,23 @@
 	font-size: 14px;
 	}
 	}
+	body section h1.faq {
+	  text-transform: uppercase;
+	  text-align: center;
+	  font-weight: normal;
+	  letter-spacing: 10px;
+	  font-size: 25px;
+	  color: white;
+	  line-height: 1.5;
+	  padding-top: 120px;
+	  padding-bottom: 60px;
+	}
 </style>
 <body>
 	<div class="sectiontitle">
-		<h2> ABOUT US </h2>
+		<section>
+		    <h1 class="faq"> ABOUT US</h1> 
+		</section>
 		<h3 style=" margin-left: 50px; margin-right: 50px; color:white; font-size: 20px; margin-top: 20px; margin-bottom: 30px;"> We are three students from St Anna school located in Barcelona. We've been developing this project since the begining of the year and hopefully we'll finish this in a few months.</h3>
 		</br>
 		<h3 style=" text-align: center; margin-bottom: 50px; font-size: 20px; color: white;">If you want to help us sharing our project we'll appreciate it.</h3>
@@ -301,7 +280,6 @@
 	</div>
 	<div class="sectiontitle">
 		<h2>Projects statistics</h2>
-		<span class="headerLine"></span>
 	</div>
 	<div id="projectFacts" class="sectionClass">
 		<div class="fullWidth eight columns">
