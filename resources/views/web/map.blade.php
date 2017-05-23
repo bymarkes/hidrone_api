@@ -181,7 +181,7 @@
 	    }
 	}											// 5min = 300000
 												//20min = 1200000
-	var timeoutMap = setInterval(timeoutSession, 300000);
+	var timeoutMap = setInterval(timeoutSession, 1200000);
 	function timeoutSession() {
 		window.location.replace("http://hidroneapi.azurewebsites.net/timeout");
 	}
